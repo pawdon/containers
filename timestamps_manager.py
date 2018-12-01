@@ -53,7 +53,7 @@ class TimestampsManager:
             return -1
 
     def add(self, x):
-        if type(x) is int:
+        if type(x) is int and x >= 0:
             if len(self.timestamps) == 0:
                 self.timestamps.add(x)
                 self.min = x
