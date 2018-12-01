@@ -1,0 +1,73 @@
+Started at 2018.12.01 23:00:54
+
+Ships settings:
+	Maximum number of available ships = 3
+	Acceptable length range = (50, 100)
+	Acceptable width range = (50, 100)
+	Acceptable height range = (50, 100)
+Containers settings:
+	Acceptable length range = (1, 40)
+	Acceptable width range = (1, 40)
+	Acceptable height range = (1, 40)
+Optimizer version 1
+
+Started entering data from input.txt.
+	Successfully added a ship s0,50,77,54 with timestamp -1.
+	Successfully added a container c1,30,19,17,20.
+	Successfully added a container c9,37,19,38,20.
+	Successfully added a container c14,33,19,18,27.
+	Successfully added a container c16,25,19,5,27.
+	Successfully added a container c5,32,19,21,31.
+	Successfully added a container c19,29,19,4,31.
+	Successfully added a container c0,3,19,40,43.
+	Successfully added a container c2,27,19,10,43.
+	Successfully added a container c10,5,19,37,43.
+	Successfully added a ship s2,93,85,54 with timestamp 43.
+	Successfully added a container c6,33,19,18,44.
+	Successfully added a container c8,24,19,27,44.
+	Successfully added a container c11,9,19,24,44.
+	Successfully added a ship s3,81,95,86 with timestamp 44.
+	Successfully added a container c12,19,19,1,44.
+	Successfully added a container c17,25,19,4,44.
+	Successfully added a container c4,39,19,40,81.
+	Successfully added a ship s4,58,80,53 with timestamp 81.
+	Successfully added a container c7,8,19,22,81.
+	Successfully added a container c15,1,19,38,81.
+	Successfully added a container c3,8,19,16,92.
+	Successfully added a ship s1,80,75,100 with timestamp 92.
+	Successfully added a container c13,8,19,17,92.
+	Successfully added a container c18,31,19,15,92.
+Finished entering data.
+
+Data summary:
+Ships (5)
+	s0,50,77,54;t=-1
+	s2,93,85,54;t=43
+	s3,81,95,86;t=44
+	s4,58,80,53;t=81
+	s1,80,75,100;t=92
+Waiting containers (20)
+	c1,30,19,17,20
+	c9,37,19,38,20
+	c14,33,19,18,27
+	c16,25,19,5,27
+	c5,32,19,21,31
+	c19,29,19,4,31
+	c0,3,19,40,43
+	c2,27,19,10,43
+	c10,5,19,37,43
+	c6,33,19,18,44
+	c8,24,19,27,44
+	c11,9,19,24,44
+	c12,19,19,1,44
+	c17,25,19,4,44
+	c4,39,19,40,81
+	c7,8,19,22,81
+	c15,1,19,38,81
+	c3,8,19,16,92
+	c13,8,19,17,92
+	c18,31,19,15,92
+Sent containers (0)
+
+Whole time = 0:00:00.002992
+Finished at 2018.12.01 23:00:54
