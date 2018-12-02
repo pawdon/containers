@@ -73,8 +73,8 @@ class DataGenerator:
 
 
 def test():
-    dg = DataGenerator(containers_nr=20, ships_nr=5, only_correct_timestamps=False)
-    dg.rand_and_write(filename="input_incorrect.txt")
+    dg = DataGenerator(containers_nr=100, ships_nr=5, timestamps_nr=4, only_correct_timestamps=True)
+    dg.rand_and_write(filename="input_t4.txt")
     print(dg)
 
 

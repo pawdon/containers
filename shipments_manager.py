@@ -184,11 +184,11 @@ class ShipmentsManager:
     def get_summary_empty_volume(self):
         return sum([sh.get_empty_volume() for sh in self.shipments])
 
-    def get_containers(self, skip_first_shipments=False, skip_last_shipments=False):
+    def get_containers(self, skip_first_shipment=False, skip_last_shipment=False):
         shipments_list = self.shipments
-        if skip_first_shipments:
+        if skip_first_shipment:
             shipments_list = shipments_list[1:]
-        if skip_last_shipments:
+        if skip_last_shipment:
             shipments_list = shipments_list[0:-1]
         containers_list = []
         for sh in shipments_list:
