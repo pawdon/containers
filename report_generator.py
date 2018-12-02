@@ -5,6 +5,8 @@ import shutil
 
 from containers_manager import ContainersManager
 from ships_manager import ShipsManager
+from shipments_manager import ShipmentsManager
+from optimizer import OptimizerSelector
 
 
 class ReportGenerator:
@@ -91,7 +93,8 @@ class ReportGenerator:
             self.log(f"Successfully added a ship {line} with timestamp {timestamp}.")
         else:
             self.log(f"A ship not added. The line {line} is incorrect. "
-                     f"The dimensions must be in the acceptable range.")
+                     f"The id must be unique, "
+                     f"the dimensions must be in the acceptable range.")
 
     def add_container(self, line, min_timestamp, container):
         if line[-1] == "\n":
@@ -100,7 +103,8 @@ class ReportGenerator:
             self.log(f"Successfully added a container {line}.")
         else:
             self.log(f"A container not added. The line {line} is incorrect. "
-                     f"The dimensions must be in the acceptable range "
+                     f"The id must be unique, "
+                     f"the dimensions must be in the acceptable range "
                      f"and the timestamp must be greater than or equal to {min_timestamp}")
 
     def start_optimization(self, ships_manager, containers_manager):
@@ -120,7 +124,7 @@ def test():
     with ReportGenerator() as rg:
         sm = ShipsManager(max_available=3)
         cm = ContainersManager()
-        rg.start(sm, cm)
+        rg.start(sm, cm, OptimizerSelector.select(0))
         rg.stop()
 
 

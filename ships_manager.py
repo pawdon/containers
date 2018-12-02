@@ -52,7 +52,6 @@ class ShipsManager:
                                          + [x.to_str_with_timestamp() for x in self.available])
         return result
 
-
     def add(self, x, timestamp):
         if type(timestamp) is not int:
             return None
@@ -60,7 +59,8 @@ class ShipsManager:
         if ship is not None:
             check_ok = self.min_length <= ship.length <= self.max_length and \
                        self.min_width <= ship.width <= self.max_width and \
-                       self.min_height <= ship.height <= self.max_height
+                       self.min_height <= ship.height <= self.max_height and \
+                       ship.sid not in [x.sid for x in self.ships]
             if check_ok:
                 ship.timestamp = timestamp
                 self.ships.append(ship)
@@ -97,6 +97,7 @@ def test2():
     sm.add("s13,51,52,52", timestamp=3)
     sm.add("s14,51,52,52", timestamp=3)
     sm.add("s15,51,52,52", timestamp=4)
+    sm.add("s12,51,52,52", timestamp=4)
     print(sm)
     sm.get_available(max_timestamp=3)
     print(sm)

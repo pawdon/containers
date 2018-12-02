@@ -12,8 +12,15 @@ class Container:
     def __repr__(self):
         return f"Container({self.__str__()})"
 
-    def to_string(self):
-        return self.__str__()
+    def to_string(self, order=None):
+        if order is None:
+            order = ["length", "width", "height"]
+        d = {"length": self.length,
+             "width": self.width,
+             "height": self.height}
+        return f"c{self.cid}," \
+               f"{order[0]}={d[order[0]]},{order[1]}={d[order[1]]},{order[2]}={d[order[2]]}," \
+               f"timestamp={self.timestamp}"
 
     @staticmethod
     def from_string(text):
@@ -55,7 +62,8 @@ class ContainersManager:
             check_ok = container.timestamp >= min_timestamp and \
                        self.min_length <= container.length <= self.max_length and \
                        self.min_width <= container.width <= self.max_width and \
-                       self.min_height <= container.height <= self.max_height
+                       self.min_height <= container.height <= self.max_height and \
+                       container.cid not in [x.cid for x in self.waiting_containers + self.sent_containers]
             if check_ok:
                 if self.const_h is None:
                     self.const_h = container.height
@@ -105,6 +113,7 @@ def test2():
     cm.add("c14,1,2,2,4", min_timestamp=3)
     cm.add("c15,1,2,2,3", min_timestamp=4)
     cm.add("c16,41,2,2,4", min_timestamp=4)
+    cm.add("c14,2,2,2,4", min_timestamp=4)
     print(cm)
     containers = cm.get_containers(max_timestamp=3)
     print(containers)

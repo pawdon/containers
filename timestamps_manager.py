@@ -20,26 +20,26 @@ class TimestampsManager:
     def get_max(self):
         return self.max
 
-    def __set_min_directly(self, x):
+    def _set_min_directly(self, x):
         if x <= self.max:
             self.min = x
 
-    def __set_max_directly(self, x):
+    def _set_max_directly(self, x):
         if x >= self.min:
             self.max = x
 
     def set_min(self, x):
         if x in self.timestamps:
-            self.__set_min_directly(x)
+            self._set_min_directly(x)
 
     def set_max(self, x):
         if x in self.timestamps:
-            self.__set_max_directly(x)
+            self._set_max_directly(x)
 
     def increase_min(self):
         if self.min < self.timestamps[-1]:
             ind = self.timestamps.index(self.min)
-            self.__set_min_directly(self.timestamps[ind + 1])
+            self._set_min_directly(self.timestamps[ind + 1])
             return self.get_min()
         else:
             return -1
@@ -47,7 +47,7 @@ class TimestampsManager:
     def increase_max(self):
         if self.max < self.timestamps[-1]:
             ind = self.timestamps.index(self.max)
-            self.__set_max_directly(self.timestamps[ind + 1])
+            self._set_max_directly(self.timestamps[ind + 1])
             return self.get_max()
         else:
             return -1
