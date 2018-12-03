@@ -1,4 +1,4 @@
-Started at 2018.12.03 00:05:40
+Started at 2018.12.03 13:52:58
 
 ****************************************************************************************************
 
@@ -236,53 +236,54 @@ Data summary:
 
 ****************************************************************************************************
 
-Started optimization at 2018.12.03 00:05:40
+Started optimization at 2018.12.03 13:52:58
 
 	Sending containers for timestamp 21
 		Available ships: [Ship(s4,53,90,58), Ship(s0,71,75,59)]
 		Completed shipments:
-			Shipment (ship = s4, empty volume = 186060, containers number = 5): [Container(c1,26,40,32,21), Container(c3,14,40,19,21), Container(c4,30,40,23,21), Container(c9,17,40,21,21), Container(c11,5,40,24,21)]
-			Shipment (ship = s4, empty volume = 182540, containers number = 9): [Container(c15,29,40,11,21), Container(c19,7,40,13,21), Container(c25,28,40,7,21), Container(c30,30,40,10,21), Container(c33,11,40,3,21), Container(c42,2,40,26,21), Container(c47,28,40,26,21), Container(c48,2,40,17,21), Container(c50,15,40,40,21)]
-			Shipment (ship = s4, empty volume = 202380, containers number = 3): [Container(c52,35,40,11,21), Container(c53,32,40,36,21), Container(c69,10,40,32,21)]
+			Shipment (ship = s0, empty volume = 199335, containers number = 8): [Container(c1,26,40,32,21), Container(c3,14,40,19,21), Container(c4,30,40,23,21), Container(c9,17,40,21,21), Container(c11,5,40,24,21), Container(c15,29,40,11,21), Container(c19,7,40,13,21), Container(c25,28,40,7,21)]
+			Shipment (ship = s4, empty volume = 230780, containers number = 5): [Container(c30,30,40,10,21), Container(c33,11,40,3,21), Container(c42,2,40,26,21), Container(c47,28,40,26,21), Container(c48,2,40,17,21)]
+			Shipment (ship = s4, empty volume = 191180, containers number = 3): [Container(c50,15,40,40,21), Container(c52,35,40,11,21), Container(c53,32,40,36,21)]
+			Shipment (ship = s0, empty volume = 212255, containers number = 7): [Container(c69,10,40,32,21), Container(c77,10,40,37,21), Container(c83,37,40,28,21), Container(c85,28,40,6,21), Container(c89,8,40,24,21), Container(c90,10,40,15,21), Container(c92,26,40,12,21)]
 		Uncompleted shipment:
-			Shipment (ship = s0, empty volume = 202015, containers number = 7): [Container(c77,10,40,37,21), Container(c83,37,40,28,21), Container(c85,28,40,6,21), Container(c89,8,40,24,21), Container(c90,10,40,15,21), Container(c92,26,40,12,21), Container(c96,36,40,16,21)]
+			Shipment (ship = s0, empty volume = 291135, containers number = 1): [Container(c96,36,40,16,21)]
 	
 	Sending containers for timestamp 26
 		Available ships: [Ship(s4,53,90,58), Ship(s0,71,75,59)]
 		Completed shipments:
-			Shipment (ship = s0, empty volume = 202015, containers number = 7): [Container(c77,10,40,37,21), Container(c83,37,40,28,21), Container(c85,28,40,6,21), Container(c89,8,40,24,21), Container(c90,10,40,15,21), Container(c92,26,40,12,21), Container(c96,36,40,16,21)]
-			Shipment (ship = s4, empty volume = 220660, containers number = 1): [Container(c2,35,40,40,26)]
+			Shipment (ship = s4, empty volume = 197620, containers number = 2): [Container(c96,36,40,16,21), Container(c2,35,40,40,26)]
 			Shipment (ship = s0, empty volume = 197895, containers number = 5): [Container(c7,21,40,24,26), Container(c10,14,40,27,26), Container(c13,29,40,39,26), Container(c14,30,40,29,26), Container(c17,12,40,2,26)]
 			Shipment (ship = s0, empty volume = 180495, containers number = 6): [Container(c18,16,40,34,26), Container(c22,31,40,33,26), Container(c24,7,40,23,26), Container(c26,13,40,40,26), Container(c28,40,40,20,26), Container(c29,21,40,14,26)]
-			Shipment (ship = s4, empty volume = 226220, containers number = 3): [Container(c31,17,40,15,26), Container(c32,33,40,10,26), Container(c37,26,40,26,26)]
-			Shipment (ship = s0, empty volume = 223935, containers number = 6): [Container(c38,27,40,34,26), Container(c43,8,40,35,26), Container(c46,37,40,17,26), Container(c55,1,40,15,26), Container(c57,8,40,22,26), Container(c60,14,40,17,26)]
+			Shipment (ship = s0, empty volume = 215815, containers number = 5): [Container(c31,17,40,15,26), Container(c32,33,40,10,26), Container(c37,26,40,26,26), Container(c38,27,40,34,26), Container(c43,8,40,35,26)]
+			Shipment (ship = s4, empty volume = 234340, containers number = 4): [Container(c46,37,40,17,26), Container(c55,1,40,15,26), Container(c57,8,40,22,26), Container(c60,14,40,17,26)]
 			Shipment (ship = s4, empty volume = 198700, containers number = 5): [Container(c63,37,40,37,26), Container(c64,36,40,11,26), Container(c67,1,40,40,26), Container(c70,16,40,4,26), Container(c71,40,40,2,26)]
 		Uncompleted shipment:
-			Shipment (ship = s0, empty volume = 238415, containers number = 6): [Container(c75,33,40,14,26), Container(c76,24,40,17,26), Container(c78,14,40,32,26), Container(c80,3,40,8,26), Container(c93,40,40,12,26), Container(c97,6,40,12,26)]
+			Shipment (ship = s4, empty volume = 200900, containers number = 6): [Container(c75,33,40,14,26), Container(c76,24,40,17,26), Container(c78,14,40,32,26), Container(c80,3,40,8,26), Container(c93,40,40,12,26), Container(c97,6,40,12,26)]
 	
 	Sending containers for timestamp 30
 		Available ships: [Ship(s2,75,100,92), Ship(s3,56,99,84), Ship(s1,98,70,98)]
 		Completed shipments:
-			Shipment (ship = s1, empty volume = 446480, containers number = 18): [Container(c75,33,40,14,26), Container(c76,24,40,17,26), Container(c78,14,40,32,26), Container(c80,3,40,8,26), Container(c93,40,40,12,26), Container(c97,6,40,12,26), Container(c5,34,40,14,30), Container(c8,20,40,31,30), Container(c12,34,40,5,30), Container(c20,18,40,33,30), Container(c21,6,40,30,30), Container(c23,20,40,1,30), Container(c27,21,40,29,30), Container(c34,33,40,7,30), Container(c35,23,40,16,30), Container(c40,39,40,7,30), Container(c41,13,40,14,30), Container(c45,28,40,1,30)]
+			Shipment (ship = s3, empty volume = 339296, containers number = 9): [Container(c75,33,40,14,26), Container(c76,24,40,17,26), Container(c78,14,40,32,26), Container(c80,3,40,8,26), Container(c93,40,40,12,26), Container(c97,6,40,12,26), Container(c5,34,40,14,30), Container(c8,20,40,31,30), Container(c12,34,40,5,30)]
+			Shipment (ship = s3, empty volume = 366296, containers number = 9): [Container(c20,18,40,33,30), Container(c21,6,40,30,30), Container(c23,20,40,1,30), Container(c27,21,40,29,30), Container(c34,33,40,7,30), Container(c35,23,40,16,30), Container(c40,39,40,7,30), Container(c41,13,40,14,30), Container(c45,28,40,1,30)]
 		Uncompleted shipment:
 			Shipment (ship = s1, empty volume = 499640, containers number = 9): [Container(c49,16,40,40,30), Container(c56,33,40,11,30), Container(c58,30,40,18,30), Container(c59,17,40,18,30), Container(c66,5,40,8,30), Container(c68,36,40,33,30), Container(c84,10,40,9,30), Container(c87,17,40,5,30), Container(c98,28,40,38,30)]
 	
 	Sending containers for timestamp 39
 		Available ships: [Ship(s2,75,100,92), Ship(s3,56,99,84), Ship(s1,98,70,98)]
 		Completed shipments:
-			Shipment (ship = s1, empty volume = 499640, containers number = 9): [Container(c49,16,40,40,30), Container(c56,33,40,11,30), Container(c58,30,40,18,30), Container(c59,17,40,18,30), Container(c66,5,40,8,30), Container(c68,36,40,33,30), Container(c84,10,40,9,30), Container(c87,17,40,5,30), Container(c98,28,40,38,30)]
-			Shipment (ship = s3, empty volume = 341416, containers number = 8): [Container(c0,25,40,34,39), Container(c6,31,40,13,39), Container(c16,17,40,17,39), Container(c36,40,40,17,39), Container(c39,1,40,12,39), Container(c44,17,40,25,39), Container(c51,32,40,6,39), Container(c54,32,40,8,39)]
+			Shipment (ship = s1, empty volume = 375360, containers number = 17): [Container(c49,16,40,40,30), Container(c56,33,40,11,30), Container(c58,30,40,18,30), Container(c59,17,40,18,30), Container(c66,5,40,8,30), Container(c68,36,40,33,30), Container(c84,10,40,9,30), Container(c87,17,40,5,30), Container(c98,28,40,38,30), Container(c0,25,40,34,39), Container(c6,31,40,13,39), Container(c16,17,40,17,39), Container(c36,40,40,17,39), Container(c39,1,40,12,39), Container(c44,17,40,25,39), Container(c51,32,40,6,39), Container(c54,32,40,8,39)]
+			Shipment (ship = s2, empty volume = 494600, containers number = 13): [Container(c61,26,40,26,39), Container(c62,40,40,15,39), Container(c65,38,40,20,39), Container(c72,20,40,9,39), Container(c73,13,40,22,39), Container(c74,21,40,25,39), Container(c79,16,40,5,39), Container(c81,17,40,12,39), Container(c82,33,40,13,39), Container(c86,24,40,15,39), Container(c88,35,40,7,39), Container(c91,2,40,39,39), Container(c94,22,40,21,39)]
 		Uncompleted shipment:
-			Shipment (ship = s1, empty volume = 417520, containers number = 15): [Container(c61,26,40,26,39), Container(c62,40,40,15,39), Container(c65,38,40,20,39), Container(c72,20,40,9,39), Container(c73,13,40,22,39), Container(c74,21,40,25,39), Container(c79,16,40,5,39), Container(c81,17,40,12,39), Container(c82,33,40,13,39), Container(c86,24,40,15,39), Container(c88,35,40,7,39), Container(c91,2,40,39,39), Container(c94,22,40,21,39), Container(c95,36,40,11,39), Container(c99,32,40,34,39)]
+			Shipment (ship = s3, empty volume = 406336, containers number = 2): [Container(c95,36,40,11,39), Container(c99,32,40,34,39)]
 	
 	Sending containers for timestamp 39
 		Available ships: [Ship(s2,75,100,92), Ship(s3,56,99,84), Ship(s1,98,70,98)]
 		Completed shipments:
-			Shipment (ship = s1, empty volume = 417520, containers number = 15): [Container(c61,26,40,26,39), Container(c62,40,40,15,39), Container(c65,38,40,20,39), Container(c72,20,40,9,39), Container(c73,13,40,22,39), Container(c74,21,40,25,39), Container(c79,16,40,5,39), Container(c81,17,40,12,39), Container(c82,33,40,13,39), Container(c86,24,40,15,39), Container(c88,35,40,7,39), Container(c91,2,40,39,39), Container(c94,22,40,21,39), Container(c95,36,40,11,39), Container(c99,32,40,34,39)]
+			Shipment (ship = s3, empty volume = 406336, containers number = 2): [Container(c95,36,40,11,39), Container(c99,32,40,34,39)]
 	
 
-Optimization time = 0:00:01.292512
-Finished optimization at 2018.12.03 00:05:41
+Optimization time = 0:00:02.405908
+Finished optimization at 2018.12.03 13:53:00
 
 ****************************************************************************************************
 
@@ -291,5 +292,5 @@ Sent 100 containers.
 
 ****************************************************************************************************
 
-Whole time = 0:00:01.295535
-Finished at 2018.12.03 00:05:41
+Whole time = 0:00:02.411650
+Finished at 2018.12.03 13:53:00

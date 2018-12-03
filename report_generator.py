@@ -10,22 +10,36 @@ from optimizer import OptimizerSelector
 
 
 class ReportGenerator:
+    """
+    Class used for logging and generating report.
+    """
     def __init__(self, dirname="log", filename="log.txt", if_log_to_file=True, if_print=True):
-        self.if_log_to_file = if_log_to_file
-        self.if_print = if_print
-        self.dirname = dirname
-        self.filename = os.path.join(dirname, filename)
-        self.logfile = None
+        """
+        Constructor.
+        :param dirname: a directory in which logs will be created
+        :param filename: a basename of a file to which logs will be written
+        :param if_log_to_file: (bool) if log to file
+        :param if_print: (bool) if log using print
+        """
+        self.if_log_to_file = if_log_to_file                # (bool) if log to file
+        self.if_print = if_print                            # (bool) if log using print
+        self.dirname = dirname                              # a directory in which logs will be created
+        self.filename = os.path.join(dirname, filename)     # a file to which logs will be written
+        self.logfile = None                                 # an opened log file
 
-        self.start_time = None
-        self.stop_time = None
-        self.optimization_start_time = None
-        self.optimization_stop_time = None
-        self.indentation = 0
+        self.start_datetime = None                          # start datetime
+        self.stop_datetime = None                           # stop datetime
+        self.optimization_start_datetime = None             # optimization start datetime
+        self.optimization_stop_datetime = None              # optimization stop datetime
+        self.indentation = 0                                # indentation number
 
-        self.shipments_list = []
+        self.shipments_list = []                            # list of sent shipments
 
     def __enter__(self):
+        """
+        Open a log file. Used automatically at the beginning of "with".
+        :return: a report generator with opened log file
+        """
         if os.path.exists(self.dirname):
             shutil.rmtree(self.dirname)
         os.mkdir(self.dirname)
@@ -33,26 +47,57 @@ class ReportGenerator:
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        """
+        Close log file. Used automatically at the end of "with".
+        :param exc_type:
+        :param exc_val:
+        :param exc_tb:
+        :return:
+        """
         self.logfile.close()
 
     def new_section(self):
+        """
+        Log new section.
+        :return:
+        """
         self.log("")
         self.log("****************************************************************************************************")
         self.log("")
 
     def indent(self, indentation):
+        """
+        Set indentation.
+        :param indentation: an indentation to set
+        :return:
+        """
         self.indentation = indentation
 
     def increase_indent(self):
+        """
+        Increase indentation.
+        :return:
+        """
         self.indentation += 1
 
     def decrease_indent(self):
+        """
+        Decrease indentation.
+        :return:
+        """
         if self.indentation > 0:
             self.indentation -= 1
 
     def log(self, text, additional_indent=0, new_section=False):
+        """
+        Log a message.
+        :param text: a message to log
+        :param additional_indent: number of additional indentations
+        :param new_section: (bool) if call new_section() at the beginning
+        :return:
+        """
         if new_section:
-            text += "\n"
+            self.new_section()
         for _ in range(additional_indent + self.indentation):
             text = "\t" + text
         if self.if_log_to_file:
@@ -61,12 +106,24 @@ class ReportGenerator:
             print(text)
 
     @staticmethod
-    def time2str(x):
+    def datetime2str(x):
+        """
+        Convert a datetime to a string.
+        :param x: a datetime
+        :return: a string
+        """
         return x.strftime("%Y.%m.%d %H:%M:%S")
 
     def start(self, ships_manager, containers_manager, optimizer):
-        self.start_time = datetime.now()
-        self.log(f"Started at {self.time2str(self.start_time)}")
+        """
+        Log start of the program.
+        :param ships_manager: ships manager
+        :param containers_manager: containers manager
+        :param optimizer: optimizer
+        :return:
+        """
+        self.start_datetime = datetime.now()
+        self.log(f"Started at {self.datetime2str(self.start_datetime)}")
         self.new_section()
         self.log("Ships settings:")
         self.increase_indent()
@@ -84,13 +141,24 @@ class ReportGenerator:
         self.log(optimizer.info())
 
     def stop(self):
-        self.stop_time = datetime.now()
-        delta_time = self.stop_time - self.start_time
+        """
+        Log stop of the program.
+        :return:
+        """
+        self.stop_datetime = datetime.now()
+        delta_time = self.stop_datetime - self.start_datetime
         self.new_section()
         self.log(f"Whole time = {str(delta_time)}")
-        self.log(f"Finished at {self.time2str(self.stop_time)}")
+        self.log(f"Finished at {self.datetime2str(self.stop_datetime)}")
 
     def add_ship(self, line, timestamp, ship):
+        """
+        Log adding a ship.
+        :param line: a line generating a ship
+        :param timestamp: a timestamp
+        :param ship: a ship or None
+        :return:
+        """
         if line[-1] == "\n":
             line = line[0:-1]
         if ship is not None:
@@ -101,6 +169,13 @@ class ReportGenerator:
                      f"the dimensions must be in the acceptable range.")
 
     def add_container(self, line, min_timestamp, container):
+        """
+        Log adding a container.
+        :param line: a line generating a container
+        :param min_timestamp: a timestamp
+        :param container: a container or None
+        :return:
+        """
         if line[-1] == "\n":
             line = line[0:-1]
         if container is not None:
@@ -112,6 +187,12 @@ class ReportGenerator:
                      f"and the timestamp must be greater than or equal to {min_timestamp}")
 
     def data_summary(self, ships_manager, containers_manager):
+        """
+        Log data summary.
+        :param ships_manager: ships manager
+        :param containers_manager: containers manager
+        :return:
+        """
         self.new_section()
         self.log("Data summary:")
         self.increase_indent()
@@ -131,28 +212,49 @@ class ReportGenerator:
         self.decrease_indent()
 
     def start_optimization(self):
-        self.optimization_start_time = datetime.now()
+        """
+        Log start optimization.
+        :return:
+        """
+        self.optimization_start_datetime = datetime.now()
         self.new_section()
-        self.log(f"Started optimization at {self.time2str(self.optimization_start_time)}")
+        self.log(f"Started optimization at {self.datetime2str(self.optimization_start_datetime)}")
         self.log("")
         self.increase_indent()
 
     def stop_optimization(self):
+        """
+        Log stop optimization.
+        :return:
+        """
         self.decrease_indent()
-        self.optimization_stop_time = datetime.now()
-        delta_time = self.optimization_stop_time - self.optimization_start_time
+        self.optimization_stop_datetime = datetime.now()
+        delta_time = self.optimization_stop_datetime - self.optimization_start_datetime
         self.log("")
         self.log(f"Optimization time = {str(delta_time)}")
-        self.log(f"Finished optimization at {self.time2str(self.optimization_stop_time)}")
+        self.log(f"Finished optimization at {self.datetime2str(self.optimization_stop_datetime)}")
 
     @staticmethod
     def shipment2str(shipment):
+        """
+        Convert a shipment to a string.
+        :param shipment: a shipment
+        :return: a string
+        """
         return f"Shipment (ship = s{shipment.ship.sid}, " \
                f"empty volume = {shipment.get_empty_volume()}, " \
                f"containers number = {len(shipment.get_all_containers())}): " \
                f"{shipment.get_all_containers()}"
 
     def send_containers(self, timestamp, available_ships, completed_shipments, uncompleted_shipment=None):
+        """
+        Log sending containers.
+        :param timestamp: a main shipment timestamp
+        :param available_ships: a list of available ships
+        :param completed_shipments: a list of completed shipments
+        :param uncompleted_shipment: an uncompleted shipment
+        :return:
+        """
         self.log(f"Sending containers for timestamp {timestamp}")
         self.increase_indent()
         self.log(f"Available ships: {available_ships}")
@@ -176,6 +278,10 @@ class ReportGenerator:
         self.log("")
 
     def generate_report(self):
+        """
+        Generate report.
+        :return:
+        """
         self.new_section()
         self.log("Report generating")
         sent_containers = sum([len(sh.get_all_containers()) for sh in self.shipments_list])
